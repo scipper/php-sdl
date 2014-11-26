@@ -1,0 +1,12 @@
+/bin/
+/build/
+/logs/*
+/userdata/
+/nbproject/*
+/nbproject/private/
+/.settings/*
+.*
+!/.gitignore
+*.log
+*~
+.gitmodules
