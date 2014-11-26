@@ -1,14 +1,14 @@
 <?php
 
-namespace org\sdl;
+namespace org\sdl\video;
 
 /**
  * 
  * @author Steffen Kowalski <sk@traiwi.de>
  *
  * @since 26.11.2014
- * @namespace org\sdl
- * @package org\sdl
+ * @namespace org\sdl\video
+ * @package org\sdl\video
  *
  */
 class SDLRect {
@@ -24,8 +24,12 @@ class SDLRect {
 	 * 
 	 * @param \SDL_Rect $pixelFormat
 	 */
-	public function __construct($rect) {
-		$this->rect = $rect;
+	public function __construct($rect = null) {
+		if($rect === null) {
+			$this->rect = \SDL_Rect();
+		} else {
+			$this->rect = $rect;
+		}
 	}
 	
 	/**

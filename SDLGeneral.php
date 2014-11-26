@@ -1,5 +1,8 @@
 <?php
 namespace org\sdl;
+
+use org\sdl\general\SDLErrorcode;
+
 /**
  * 
  * @author Steffen Kowalski <sk@traiwi.de>
@@ -10,6 +13,7 @@ namespace org\sdl;
  *
  */
 class SDLGeneral {
+	
 	const VIDEO = SDL_INIT_VIDEO;
 	const AUDIO = SDL_INIT_AUDIO;
 	const TIMER = SDL_INIT_TIMER;

@@ -1,12 +1,12 @@
 <?php
-namespace org\sdl;
+namespace org\sdl\video;
 /**
  * 
  * @author Steffen Kowalski <sk@traiwi.de>
  *
  * @since 25.11.2014
- * @namespace org\sdl
- * @package org\sdl
+ * @namespace org\sdl\video
+ * @package org\sdl\video
  *
  */
 class SDLSurface {
@@ -97,8 +97,12 @@ class SDLSurface {
 	 * 
 	 * @param \SDL_Surface $surface
 	 */
-	public function __construct($surface) {
-		$this->surface = $surface;
+	public function __construct($surface = null) {
+		if($surface === null) {
+			$this->surface = \SDL_Surface();
+		} else {
+			$this->surface = $surface;
+		}
 	}
 	/**
 	 * 
@@ -118,7 +122,7 @@ class SDLSurface {
 	
 	/**
 	 * 
-	 * @return \org\sdl\SDLPixelFormat
+	 * @return \org\sdl\video\SDLPixelFormat
 	 */
 	public function pixelFormat() {
 		return new SDLPixelFormat($this->surface["format"]);
@@ -149,7 +153,7 @@ class SDLSurface {
 	}
 	
 	/**
-	 * 
+	 * @TODO implement Pixel data
 	 * @param Pixel Data $pixels
 	 */
 	public function pixels($pixels) {
@@ -158,7 +162,7 @@ class SDLSurface {
 	
 	/**
 	 * 
-	 * @return \org\sdl\SDLRect
+	 * @return \org\sdl\video\SDLRect
 	 */
 	public function clipRect() {
 		return new SDLRect($this->surface["clip_rect"]);

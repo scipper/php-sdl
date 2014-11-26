@@ -1,5 +1,9 @@
 <?php
 namespace org\sdl;
+
+use org\sdl\video\SDLSurface;
+use org\sdl\video\SDLVideoInfo;
+
 /**
  * 
  * @author Steffen Kowalski <sk@traiwi.de>
@@ -17,6 +21,14 @@ class SDLVideo {
 	 */
 	public static function getVideoSurface() {
 		return new SDLSurface(SDL_GetVideoSurface());
+	}
+	
+	/**
+	 * 
+	 * @return \org\sdl\SDLVideoInfo
+	 */
+	public static function getVideoInfo() {
+		return new SDLVideoInfo();
 	}
 	
 }
