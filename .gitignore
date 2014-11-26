@@ -1,12 +1,8 @@
 /bin/
 /build/
-/logs/*
-/userdata/
-/nbproject/*
-/nbproject/private/
+/logs/
 /.settings/*
 .*
 !/.gitignore
 *.log
 *~
-.gitmodules
