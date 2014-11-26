@@ -16,7 +16,7 @@ class SDLVideo {
 	 * @return SDL_Surface
 	 */
 	public static function getVideoSurface() {
-		return SDL_GetVideoSurface();
+		return new SDLSurface(SDL_GetVideoSurface());
 	}
 	
 }
