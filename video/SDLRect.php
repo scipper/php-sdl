@@ -40,6 +40,38 @@ class SDLRect {
 		return $this->rect;
 	}
 	
+	/**
+	 * 
+	 * @return integer
+	 */
+	public function h() {
+		return $this->rect["h"];
+	}
+	
+	/**
+	 * 
+	 * @return integer
+	 */
+	public function w() {
+		return $this->rect["w"];
+	}
+	
+	/**
+	 * 
+	 * @return integer
+	 */
+	public function x() {
+		return $this->rect["x"];
+	}
+	
+	/**
+	 * 
+	 * @return integer
+	 */
+	public function y() {
+		return $this->rect["y"];
+	}
+	
 }
 
 ?>
