@@ -14,17 +14,44 @@ use org\sdl\general\SDLErrorcode;
  */
 class SDLGeneral {
 	
+	/**
+	 * The video subsystem
+	 */
 	const VIDEO = SDL_INIT_VIDEO;
+	
+	/**
+	 * The audio subsystem
+	 */
 	const AUDIO = SDL_INIT_AUDIO;
+	
+	/**
+	 * The timer subsystem
+	 */
 	const TIMER = SDL_INIT_TIMER;
+	
+	/**
+	 * The cdrom subsystem
+	 */
 	const CDROM = SDL_INIT_CDROM;
+	
+	/**
+	 * The joystick subsystem
+	 */
 	const JOYSTICK = SDL_INIT_JOYSTICK;
+	
+	/**
+	 * All of the above
+	 */
 	const EVERYTHING = SDL_INIT_EVERYTHING;
+	
+	/**
+	 * Runs the event manager in a separate thread
+	 */
 	const EVENTTHREAD = SDL_INIT_EVENTTHREAD;
 	
 	/**
 	 * 
-	 * @param Uint32 $flags
+	 * @param integer $flags
 	 * @throws \Exception
 	 */
 	public static function init($flags) {
@@ -35,7 +62,7 @@ class SDLGeneral {
 	
 	/**
 	 * 
-	 * @param Uint32 $flags
+	 * @param integer $flags
 	 * @throws \Exception
 	 */
 	public static function initSubSystem($flags) {
@@ -46,7 +73,7 @@ class SDLGeneral {
 	
 	/**
 	 * 
-	 * @param Uint32 $flags
+	 * @param integer $flags
 	 */
 	public static function quitSubSystem($flags) {
 		SDL_QuitSubSystem($flags);
@@ -61,7 +88,7 @@ class SDLGeneral {
 	
 	/**
 	 * 
-	 * @param Uint32 $flags
+	 * @param integer $flags
 	 * @return boolean
 	 */
 	public static function wasInit($flags) {

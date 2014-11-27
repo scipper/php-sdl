@@ -12,81 +12,6 @@ namespace org\sdl\video;
 class SDLSurface {
 	
 	/**
-	 * Allow any pixel-format
-	 */
-	const ANYFORMAT = SDL_ANYFORMAT;
-	
-	/**
-	 * Use asynchronous blit if possible
-	 */
-	const ASYNCBLIT = SDL_ASYNCBLIT;
-	
-	/**
-	 * Double buffered 
-	 */
-	const DOUBLEBUF = SDL_DOUBLEBUF;
-	
-	/**
-	 * Use hardware acceleration blit
-	 */
-	const HWACCEL = SDL_HWACCEL;
-	
-	/**
-	 * Have an exclusive palette
-	 */
-	const HWPALETTE = SDL_HWPALETTE;
-	
-	/**
-	 * Stored in video memory
-	 */
-	const HWSURFACE = SDL_HWSURFACE;
-	
-	/**
-	 * Full screen surface
-	 */
-	const FULLSCREEN = SDL_FULLSCREEN;
-	
-	/**
-	 * Have an OpenGL context
-	 */
-	const OPENGL = SDL_OPENGL;
-	
-	/**
-	 * Support OpenGL blitting *. NOTE: This option is kept for compatibility only, and is not recommended for new code.
-	 */
-	const OPENGLBLIT = SDL_OPENGLBLIT;
-	
-	/**
-	 * Resizable surface
-	 */
-	const RESIZABLE = SDL_RESIZABLE;
-	
-	/**
-	 * Accelerated colorkey blitting with RLE
-	 */
-	const RLEACCEL = SDL_RLEACCEL;
-	
-	/**
-	 * Use alpha blending blit
-	 */
-	const SRCALPHA = SDL_SRCALPHA;
-	
-	/**
-	 * Use colorkey blitting
-	 */
-	const SRCCOLORKEY = SDL_SRCCOLORKEY;
-	
-	/**
-	 * Stored in the system memory. SWSURFACE is not actually a flag (it is defined as 0). A lack of HWSURFACE implies SWSURFACE
-	 */
-	const SWSURFACE = SDL_SWSURFACE;
-	
-	/**
-	 * Use preallocated memory
-	 */
-	const PREALLOC = SDL_PREALLOC;
-	
-	/**
 	 * 
 	 * @var \SDL_Surface
 	 */
@@ -114,7 +39,7 @@ class SDLSurface {
 	
 	/**
 	 * 
-	 * @return Uint32
+	 * @return integer
 	 */
 	public function flags() {
 		return $this->surface["flags"];
@@ -146,7 +71,7 @@ class SDLSurface {
 	
 	/**
 	 * 
-	 * @return Uint16
+	 * @return integer
 	 */
 	public function pitch() {
 		return $this->surface["pitch"];
