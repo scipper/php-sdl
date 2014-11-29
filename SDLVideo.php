@@ -185,6 +185,7 @@ class SDLVideo {
 	}
 	
 	/**
+	 * Makes sure the given area is updated on the given screen.
 	 * 
 	 * @param SDLSurface $surface
 	 * @param integer $x
@@ -197,30 +198,31 @@ class SDLVideo {
 	}
 	
 	/**
+	 * Makes sure the given list of rectangles is updated on the given screen.
 	 * 
 	 * @param SDLSurface $surface
-	 * @param integer $numrects
-	 * @param array $rects
+	 * @param array $rects[SDLRect]
 	 */
-	public static function updateRects(SDLSurface $surface, $numrects, array $rects) {
-		/**
-		 * @TODO implement
-		 */
+	public static function updateRects(SDLSurface $surface, array $rects) {
+		$array = array();
+		foreach($rects as $rect) {
+			$array[] = $rect->get();
+		}
+		SDL_UpdateRects($surface->get(), count($array), $array);
 	}
 	
 	/**
+	 * Swaps screen buffers
 	 * 
 	 * @param SDLSurface $surface
 	 * @return integer
 	 */	
 	public static function flip(SDLSurface $surface) {
-		/**
-		 * TODO implement
-		 */
-		return 0;	
+		return (integer) SDL_Flip($surface->get());	
 	}
 	
 	/**
+	 * Sets a portion of the colormap for the given 8-bit surface.
 	 * 
 	 * @param SDLSurface $surface
 	 * @param SDLColor $colors
@@ -229,13 +231,11 @@ class SDLVideo {
 	 * @return integer
 	 */
 	public static function setColors(SDLSurface $surface, SDLColor $colors, $firstcolor, $ncolors) {
-		/**
-		 * TODO implement
-		 */
-		return 0;
+		return (integer) SDL_SetColors($surface->get(), $colors->get(), $firstcolor, $ncolors);
 	}
 	
 	/**
+	 * Sets the colors in the palette of an 8-bit surface.s
 	 * 
 	 * @param SDLSurface $surface
 	 * @param integer $flags
@@ -245,10 +245,75 @@ class SDLVideo {
 	 * @return integer
 	 */
 	public static function setPalette(SDLSurface $surface, $flags, SDLColor $colors, $firstcolor, $ncolors) {
-		/**
-		 * TODO implement
-		 */
-		return 0;
+		return (integer) SDL_SetPalette($surface->get(), $flags, $colors->get(), $firstcolor, $ncolors);
+	}
+	
+	/**
+	 * Sets the color gamma function for the display
+	 * 
+	 * @param float $r
+	 * @param float $g
+	 * @param float $b
+	 * @return integer
+	 */
+	public static function setGamma($r, $g, $b) {
+		return (integer) SDL_SetGamma($r, $g, $b);
+	}
+	
+	/**
+	 * Gets the color gamma lookup tables for the display
+	 * 
+	 * @param array $r
+	 * @param array $g
+	 * @param array $b
+	 * @return integer
+	 */
+	public static function getGammaRamp(array $r, array $g, array $b) {
+		return (integer) SDL_GetGammaRamp($r, $g, $b);
+	}
+	
+	/**
+	 * Sets the color gamma lookup tables for the display
+	 * 
+	 * @param array $r
+	 * @param array $g
+	 * @param array $b
+	 * @return integer
+	 */
+	public static function setGammaRamp(array $r = null, array $g = null, array $b = null) {
+		return (integer) SDL_SetGammaRamp($r, $g, $b);
+	}
+	
+	/**
+	 * Map a RGB color value to a pixel format.
+	 * 
+	 * @param SDLPixelFormat $format
+	 * @param integer $r
+	 * @param integer $g
+	 * @param integer $b
+	 * @return integer
+	 */
+	public static function mapRgb(SDLPixelFormat $format, $r, $g, $b) {
+		return (integer) SDL_MapRGB($format->get(), $r, $g, $b);
+	}
+	
+	/**
+	 * Frees (deletes) a SDL_Surface
+	 * 
+	 * @param SDLSurface $surface
+	 */
+	public static function free(SDLSurface $surface) {
+		SDL_FreeSurface($surface->get());
+	}
+	
+	/**
+	 * Load a Windows BMP file into an SDL_Surface.
+	 * 
+	 * @param string $file
+	 * @return \org\sdl\video\SDLSurface
+	 */
+	public static function loadBmp($file) {
+		return new SDLSurface(SDL_LoadBMP($file));
 	}
 	
 }
