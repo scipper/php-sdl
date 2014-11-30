@@ -15,6 +15,16 @@ class SDLKeyboardEvent {
 	
 	/**
 	 * 
+	 */
+	const PRESSED = SDL_PRESSED;
+	
+	/**
+	 * 
+	 */
+	const RELEASED = SDL_RELEASED;
+	
+	/**
+	 * 
 	 * @var SDL_KeyboardEvent
 	 */
 	protected $event;
