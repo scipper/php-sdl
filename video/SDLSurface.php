@@ -29,12 +29,21 @@ class SDLSurface {
 			$this->surface = $surface;
 		}
 	}
+
 	/**
 	 * 
 	 * @return SDL_Surface
 	 */
 	public function get() {
 		return $this->surface;
+	}
+
+	/**
+	 * 
+	 * @param SDLSurface $surface
+	 */
+	public function set(SDLSurface $surface) {
+		$this->surface = $surface->get();
 	}
 	
 	/**
