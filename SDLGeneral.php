@@ -56,7 +56,7 @@ class SDLGeneral {
 	 */
 	public static function init($flags) {
 		if(SDL_Init($flags) === -1) {
-			throw new \Exception("Unable to init SDL: ".SDL_GetError());
+			throw new \Exception("Unable to init SDL: ".self::getError());
 		}
 	}
 	
@@ -67,7 +67,7 @@ class SDLGeneral {
 	 */
 	public static function initSubSystem($flags) {
 		if(SDL_InitSubSystem($flags) === -1) {
-			throw new \Exception("Unable to init SDL Sub System: ".SDL_GetError());
+			throw new \Exception("Unable to init SDL Sub System: ".self::getError());
 		}
 	}
 	
