@@ -22,11 +22,11 @@ class SDLRect {
 	
 	/**
 	 * 
-	 * @param \SDL_Rect $pixelFormat
+	 * @param \SDL_Rect $rect
 	 */
 	public function __construct($rect = null) {
 		if($rect === null) {
-			$this->rect = \SDL_Rect();
+			$this->rect = new \SDL_Rect();
 		} else {
 			$this->rect = $rect;
 		}
@@ -42,10 +42,26 @@ class SDLRect {
 	
 	/**
 	 * 
+	 * @param integer $h
+	 */
+	public function setH($h) {
+		$this->rect["h"] = $h;
+	}
+	
+	/**
+	 * 
 	 * @return integer
 	 */
 	public function h() {
 		return $this->rect["h"];
+	}
+	
+	/**
+	 * 
+	 * @param integer $w
+	 */
+	public function setW($w) {
+		$this->rect["w"] = $w;
 	}
 	
 	/**
