@@ -14,5 +14,6 @@
             "email": "scipper@myscipper.de"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "version": "dev"
 }
