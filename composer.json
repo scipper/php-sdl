@@ -6,5 +6,5 @@
     "config": {
         "vendor-dir": "src/org"
     },
-    "licence": "GPLv2"
+    "license": "GPLv2"
 }
