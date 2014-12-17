@@ -1,6 +1,6 @@
 {
     "name": "scipper/php-sdl",
-    "descriptio": "Transfers the SDL-Lib into OOP for better usage",
+    "description": "Transfers the SDL-Lib into OOP for better usage",
     "homepage": "http://github.com/scipper/php-sdl",
     "version": "0.1",
     "config": {
